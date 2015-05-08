@@ -36,3 +36,5 @@ class Solution:
                         j +=1
                 #i+=1
             return sum(arr)-2
+
+https://leetcode.com/discuss/34622/my-c-solutions-in-44ms-time-nearly-o-n-and-space-nearly-o-n
