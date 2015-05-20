@@ -78,7 +78,7 @@ class Solution:
             if l1.val<=l2.val:
                 merge.next = l1
                 l1 = l1.next
-            if l1.val>l2.val:
+            elif l1.val>l2.val:
                 merge.next = l2
                 l2 = l2.next
             merge = merge.next
