@@ -56,3 +56,30 @@ class Solution:
                     return l1
         
         return l1
+        
+        
+        
+        
+        
+class Solution:
+    # @param {ListNode} l1
+    # @param {ListNode} l2
+    # @return {ListNode}
+    def mergeTwoLists(self, l1, l2):
+        ret = ListNode(0)
+        merge = ret
+        while(1):
+            if not l1:
+                merge.next = l2
+                return ret.next
+            if not l2:
+                merge.next = l1
+                return ret.next
+            if l1.val<=l2.val:
+                merge.next = l1
+                l1 = l1.next
+            if l1.val>l2.val:
+                merge.next = l2
+                l2 = l2.next
+            merge = merge.next
+                
