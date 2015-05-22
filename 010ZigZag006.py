@@ -3,11 +3,7 @@ class Solution:
     # @param {integer} numRows
     # @return {string}
     def convert(self, s, numRows):
-        if len(s)<numRows or len(s)<=0:
-            return s
-        # if len(s) == 0:
-            # return s
-        if numRows ==1:
+        if len(s)<numRows or len(s)<=0 or numRows ==1:
             return s
         ret = [0]*len(s)
         start = 2*numRows-2
@@ -19,12 +15,9 @@ class Solution:
             ret[i] = s[j]
             i+=1
             while 1:
-                print j+start
-                print j+end
                 if j+start >= length:
                     break
                 if start != 0:
-                    print j+start
                     ret[i] = s[j+start]
                     i+=1
                     # ret.append(s[j+start])
@@ -32,7 +25,6 @@ class Solution:
                 if end != 0:
                     if j+end >= length:
                         break
-                    print j+end
                     ret[i] = s[j+end]
                     i+=1
                     # ret.append(s[j+end])
