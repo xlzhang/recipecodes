@@ -10,15 +10,12 @@ class Solution:
     def deleteDuplicates(self, head):
         if not head:
             return head
-        
         tp = head
         next_tp = tp.next
         while next_tp:
             if next_tp.val == tp.val:
-                next_nt = next_tp.next
-                tp.next = next_nt
-                next_tp = tp.next
+                tp.next = next_tp.next
             else:
                 tp = next_tp
-                next_tp = tp.next
+            next_tp = tp.next
         return head
