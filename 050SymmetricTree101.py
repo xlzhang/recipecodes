@@ -69,7 +69,43 @@ class Solution:
 				else:
 					ls =[]
 		return True
+
 		
+	def valid(self,ls):
+		if ls == ls[::-1]:
+			return True
+		return False
+	
+	def isSymmetric(self, root):
+		if not root:
+			return True
+		q1 = []
+		q1.append(root)
+		q2 = []
+		ls = []
+		while len(q1) !=0 or len(q2) != 0:
+			if len(q1) !=0:
+				while len(q1) !=0:
+					node = q1.pop(0)
+					ls.append(node.val)
+					if node.val != -999:
+						if node.left:
+							q2.append(node.left)
+						else:
+							q2.append(TreeNode(-999))
+						if node.right:
+							q2.append(node.right)
+						else:
+							q2.append(TreeNode(-999))
+				if self.valid(ls) == False:
+					return False
+				else:
+					ls = []
+					q1 = q2
+					q2 = []
+		return True
+
+
 		
 a = TreeNode(1)
 a.right = TreeNode(2)
